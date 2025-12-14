@@ -4,7 +4,6 @@ import { render } from "solid-js/web";
 import { createSignal, Show } from "solid-js";
 import Base, { Layout } from "./base";
 import ConfigMenu from "./components/config-menu";
-import RssWindow from "./components/rss-window";
 
 const defaultLayout: Layout = {
   topMargin: 4,
@@ -35,32 +34,6 @@ const defaultLayout: Layout = {
         {
           type: "wm",
         },
-        {
-          type: "rss",
-          options: {
-            feeds: [
-              {
-                url: "https://hnrss.org/frontpage",
-                maxItems: 20,
-                maxAge: 7,
-                useCorsProxy: false,
-              },
-              {
-                url: "https://www.reddit.com/r/programming/.rss",
-                maxItems: 40,
-                maxAge: 14,
-                useCorsProxy: true,
-              },
-            ],
-            refreshInterval: 300000,
-            maxItemsPerFeed: 30,
-            titleLength: 60,
-            maxAge: 7,
-            cleanupInterval: 30,
-            useCorsProxy: true,
-            corsProxyUrl: "https://corsproxy.io/?url=",
-          },
-        },
       ],
     },
     {
@@ -68,7 +41,7 @@ const defaultLayout: Layout = {
       width: 1,
       components: [
         {
-          type: "media",
+          type: "systray",
         },
         {
           type: "network",
@@ -98,9 +71,6 @@ function App() {
 
   return (
     <>
-      <Show when={rssOpen()}>
-        <RssWindow />
-      </Show>
       <Show when={!configOpen() && !rssOpen()}>
         <Base wm="glazewm" layout={layout()} setLayout={setLayout} />
       </Show>
