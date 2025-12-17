@@ -1,3 +1,9 @@
+> [!Note]
+> This fork removed the bar of system stats and its hovering feature
+
+<img width="290" height="55" alt="image" src="https://github.com/user-attachments/assets/8344147c-6836-4714-b343-16c553166363" />
+
+
 <p align="center">
     <img src="https://github.com/rose-pine/rose-pine-theme/raw/main/assets/icon.png" width="80" />
     <h2 align="center">Zebar Rosé Pine++</h2>
